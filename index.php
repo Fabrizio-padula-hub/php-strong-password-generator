@@ -10,14 +10,14 @@ Verificato il corretto funzionamento del nostro codice,
 spostiamo la logica in un file functions.php che includeremo poi
 nella pagina principale -->
 <?php
+require_once __DIR__ . '/functions.php';
+
+// lettura del GET e popolamento della variabile da usare
 $userLengthPw = intval(isset($_GET['length']) ? $_GET['length'] : '');
 
-// Array contenenti lettere minuscole, lettere maiuscole, numeri e simboli
-$lowercaseLetters = range('a', 'z');
-$uppercaseLetters = range('A', 'Z');
-$numbers = range(0, 9);
-$symbols = ['@', '#', '$', '%', '&', '*', '-', '+', '='];
 
+// password generata dagli array per il numero che ha scritto l'utente
+$password = generateRandomPassword($userLengthPw);
 ?>
 
 <!DOCTYPE html>
@@ -35,10 +35,12 @@ $symbols = ['@', '#', '$', '%', '&', '*', '-', '+', '='];
         <span>Lungheza password</span>
         <input type="text" name="length">
         <button>Crea</button>
-
-        </main>
-
     </form>
+
+    <!-- stampare la password generata -->
+    <div>
+        <span>La password generata è: <?php echo $password?></span>
+    </div>
 
     </main>
     
