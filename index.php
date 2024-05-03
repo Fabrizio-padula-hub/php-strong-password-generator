@@ -11,6 +11,13 @@ spostiamo la logica in un file functions.php che includeremo poi
 nella pagina principale -->
 <?php
 $userLengthPw = intval(isset($_GET['length']) ? $_GET['length'] : '');
+
+// Array contenenti lettere minuscole, lettere maiuscole, numeri e simboli
+$lowercaseLetters = range('a', 'z');
+$uppercaseLetters = range('A', 'Z');
+$numbers = range(0, 9);
+$symbols = ['@', '#', '$', '%', '&', '*', '-', '+', '='];
+
 ?>
 
 <!DOCTYPE html>
