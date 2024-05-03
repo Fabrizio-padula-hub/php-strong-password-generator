@@ -26,20 +26,40 @@ $password = generateRandomPassword($userLengthPw);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+    <header>
+        <div class="container text-center">
+            <h1>Password Generator</h1>
+            <h4>Genera una password sicura</h4>
+        </div>
+
+    </header>
 
     <main>
     <!-- Creare un form che invii in GET la lunghezza della pw -->
-    <form method="GET">
-        <span>Lungheza password</span>
-        <input type="text" name="length">
-        <button>Crea</button>
-    </form>
+    <div class="p-3 mb-2 bg-info-subtle text-info-emphasis">
+        <div class="container">
+            <form method="GET">
+                <div class="input-group mt-3 mb-3">
+                    <span class="input-group-text" id="basic-addon1">Lungheza password</span>
+                    <input type="text" name="length" class="form-control" placeholder="inserisci il numero di caratteri desiderato per la tua password" aria-label="Username" aria-describedby="basic-addon1" require>
+                    <button class="btn btn-info">Crea</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
 
     <!-- stampare la password generata -->
-    <div>
-        <span>La password generata è: <?php echo $password?></span>
+    <div class="p-3 mb-2 bg-info text-dark">
+        <div class="container">
+            <span class="alert alert-info" role="alert">
+                La password generata è: 
+                <?php echo $password?>
+            </span>
+        </div>
     </div>
 
     </main>
